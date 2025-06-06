@@ -1,0 +1,49 @@
+@use "./index.scss" as *;
+
+.footer {
+  background-color: $secondary;
+  color: $primary
+}
+
+.header {
+  background-color: $secondary;
+  color: $highlight;
+  border-color: $highlight;
+
+}
+
+.main {
+  background-color: $primary;
+  color: $secondary;
+  border-color: $highlight;
+
+  h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: $highlight;
+
+    &:hover {
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+      color: darken($color: $highlight, $amount: 15%)
+    }
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.flashing {
+  font-size: 5rem;
+  background: linear-gradient(90deg, #73bbb4, #0d8c97, #affc41, #8338ec, #00f5d4);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 5s linear infinite;
+}
+
+#root,html,body, .main{
+  min-height: 100vh;
+}
